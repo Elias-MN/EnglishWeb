@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./../css/style.css">
+  <link rel="stylesheet" href="../css/responsibleTable.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <script type="module" src="./../js/index.js" defer></script>
+  <title>Vocabulary</title>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <img src="../images/flag.jpg" alt="Logo">
+      <ul>
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="#">Vocabulary</a></li>
+        <li><a href="./diary.html">Diary</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <form>
+      <label for="word">Word</label>
+      <input type="text" name="word" id="word" autocomplete="off">
+
+      <label for="translation">Translation</label>
+      <input type="text" name="translation" id="translation" autocomplete="off">
+
+      <label for="phrase">Phrase</label>
+      <input type="text" name="phrase" id="phrase" autocomplete="off">
+
+      <input class="mybutton" type="submit" value="Add">
+    </form>
+
+    <div id="jsonButtons">
+      <button id="importButton" class="mybutton">Import</button>
+      <input type="file" name="fileInput" id="fileInput">
+      <button id="exportButton" class="mybutton">Export</button>
+    </div>
+
+    <table>
+      <caption>Vocabulary</caption>
+      <thead>
+        <tr>
+          <th scope="col">Word</th>
+          <th scope="col">Phrase</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+
+  </main>
+
+  <footer>
+    <h5 class='dark-text'>EnglishWeb - EliasMarNev © 2024</h5>
+  </footer>
+</body>
+
+</html>
