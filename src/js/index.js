@@ -115,6 +115,22 @@ async function deleteDataDB(id) {
     });
 }
 
+async function clearDataDB() {
+  dbManager.open()
+    .then(() => {
+      dbManager.clearStore()
+        .then(() => {
+          console.log("Deleted all");
+        })
+        .catch((error) => {
+          console.error("Error clearDataDB: " + error);
+        });
+    })
+    .catch((error) => {
+      console.error("Error open: " + error);
+    });
+}
+
 async function getAllData() {
 
   dbManager.open()
@@ -169,8 +185,19 @@ async function exportJSON() {
     });
 }
 
-function importJSON(json){
-  console.log(json.ITVocabulary);
+async function importJSON(json){
+
+  let deleteAll = confirm("Do you want delete all rows?");
+
+  if(deleteAll == true){
+    await clearDataDB();
+    tbodyElement.innerHTML = "";
+  }
+
+  json.ITVocabulary.forEach(element => {
+    let entry = { "word": element.word, "translation": element.translation, "phrase": element.phrase };
+    addDataDB(entry);
+  });
 }
 
 function createFile(content, nameFile){

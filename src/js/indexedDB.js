@@ -166,4 +166,26 @@ export class DatabaseManager {
     });
   }
 
+
+  clearStore(){
+    if (!this.db) {
+      throw new Error("La base de datos no está abierta.");
+    }
+
+    return new Promise((resolve, reject) => {
+      let transaction = this.db.transaction([STORE_NAME], "readwrite");
+      let objectStore = transaction.objectStore(STORE_NAME);
+      let request = objectStore.clear();
+
+      request.onsuccess = () => {
+        resolve();
+      };
+
+      request.onerror = (event) => {
+        reject(event.target.error);
+      };
+    });
+
+  }
+
 }
