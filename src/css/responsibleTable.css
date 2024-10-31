@@ -43,7 +43,87 @@ table th {
 }
 
 
-@media screen and (max-width: 600px) {
+
+/* general styling */
+
+#fileInput{
+  display: none;
+}
+
+
+body {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.25;
+  min-width: 320px;
+}
+
+.fade-out {
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}
+
+.mybutton{
+  border-radius: 50%;
+  padding: 4px;
+  border: 1px solid black;
+  cursor: pointer;
+  box-shadow: 1px 1px 0px black;
+}
+
+.mybutton i{
+  font-size: 1.25rem;
+}
+
+.mybutton:active{
+  box-shadow: none;
+  translate: 1px 1px;
+}
+
+form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid black;
+  margin: auto;
+  width: fit-content;
+}
+
+form input[type=submit]{
+  border-radius: 4px;
+  background: #b9ffb9;
+}
+
+
+
+.delete-btn{
+  background: #ffb9b9;
+}
+
+.edit-btn{
+  background: #b9d4ff;
+}
+
+#jsonButtons{
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 12px 0;
+}
+
+#jsonButtons button{
+  border-radius: 4px;
+  background: #feffb9;
+}
+
+@media (width < 800px){
+  form{
+    flex-direction: column;
+  }
+}
+
+@media (width < 480px){
   table {
     border: 0;
   }
@@ -95,68 +175,4 @@ table th {
     justify-content: flex-end;
   }
 
-}
-
-/* general styling */
-body {
-  font-family: "Open Sans", sans-serif;
-  line-height: 1.25;
-}
-
-.fade-out {
-  transition: opacity 0.5s ease;
-  opacity: 0;
-}
-
-.mybutton{
-  border-radius: 50%;
-  padding: 4px;
-  border: 1px solid black;
-  cursor: pointer;
-  box-shadow: 1px 1px 0px black;
-}
-
-.mybutton i{
-  font-size: 1.25rem;
-}
-
-.mybutton:active{
-  box-shadow: none;
-  translate: 1px 1px;
-}
-
-form{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  padding: 12px;
-  border: 1px solid black;
-  margin: auto;
-  width: fit-content;
-}
-
-form input[type=submit]{
-  border-radius: 4px;
-  background: #b9ffb9;
-}
-
-.delete-btn{
-  background: #ffb9b9;
-}
-
-.edit-btn{
-  background: #b9d4ff;
-}
-
-#jsonButtons{
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin: 12px 0;
-}
-
-#jsonButtons button{
-  border-radius: 4px;
-  background: #feffb9;
 }
